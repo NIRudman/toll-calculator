@@ -1,6 +1,10 @@
+import Holidays from 'date-holidays';
+
 import { getVehicle } from './controller/util';
 import { VehicleType } from '../types/constants';
 import { calculateFee } from './controller/tollCalculator';
+
+export const holiday = new Holidays('SE');
 
 const calculateTollOnVehicle = (vehicleType: string, dates: Array<string>): number => {
   const vehicle: VehicleType = getVehicle(vehicleType);
